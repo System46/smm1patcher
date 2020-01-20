@@ -6,7 +6,7 @@ A code patcher for Super Mario Maker 2 binaries.
 [Python 3.7](https://www.python.org/downloads/release/python-370/) installed on your PC
 
 ## Running Smm1Patcher
-Open the `launcher.py` script included in the package, and choose your binary.
+Open the `launcher.py` script included in the package, and choose your binary.  
 Then, call a function to patch code to the binary, like `change_animation_speed(speed_float)` for example.
 
 ## Where do I get help/support?
