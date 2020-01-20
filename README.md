@@ -1,5 +1,5 @@
 # Smm1Patcher
-A code patcher for Super Mario Maker 2 binaries.
+A code patcher for Super Mario Maker 1 binaries.
 
 ## Pre-Requisites
 [Smm1Patcher](https://github.com/MarioPossamato/smm1patcher/archive/master.zip)  
