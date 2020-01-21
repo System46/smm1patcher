@@ -41,3 +41,33 @@ def change_reset_rocket_speed(speed_float):
             with open(main_binary,'wb') as smm1binary:
                 smm1binary.write(smm1data)
                 print('Successfully Patched ' + str(speed_float) + ' to 0x77B8!')
+
+def change_course_height(course_height):
+    global main
+    with open(main_binary,'rb') as smm1binary:
+            smm1data = smm1binary.read()
+            smm1data = bytearray(smm1data)
+            course_height = hex(struct.unpack('<I', struct.pack('<f', course_height))[0])
+            course_height = bytes.fromhex(str(course_height).replace("0x",""))
+            smm1data[0x20A80:0x20A84] = course_height
+            with open(main_binary,'wb') as smm1binary:
+                smm1binary.write(smm1data)
+                print('Successfully Patched ' + str(course_height) + ' to 0x20A80!')
+
+def change_camera_zoom(camera_zoom):
+    global main
+    with open(main_binary,'rb') as smm1binary:
+            smm1data = smm1binary.read()
+            smm1data = bytearray(smm1data)
+            camera_zoom = hex(struct.unpack('<I', struct.pack('<f', camera_zoom))[0])
+            camera_zoom = bytes.fromhex(str(camera_zoom).replace("0x",""))
+            smm1data[0xDA974:0xDA978] = camera_zoom
+            with open(main_binary,'wb') as smm1binary:
+                smm1binary.write(smm1data)
+                print('Successfully Patched ' + str(camera_zoom) + ' to 0xDA974!')
+                with open(main_binary,'rb') as smm1binary:
+                        smm1data = smm1binary.read()
+                        smm1data = bytearray(smm1data)
+                        smm1data[0x583830:0x583834] = b'\x7c\x03\x18\x00'
+                        with open(main_binary,'wb') as smm1binary:
+                            smm1binary.write(smm1data)
